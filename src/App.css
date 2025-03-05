@@ -1,0 +1,233 @@
+@charset "UTF-8";
+/* NULL CSS */
+/* Вказуємо box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Прибираємо внутрішні відступи */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Прибираємо зовнішні відступи */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Виставляємо основні налаштування за замовчуванням для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Видаляємо стандартну стилізацію для всіх ul і il, у яких є атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Елементи a, у яких немає класу, скидаємо до дефолтних стилів */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Спрощуємо роботу із зображеннями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Вказуємо зрозумілу періодичність у потоці даних у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Успадковуємо шрифти для інпутів і кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Видаляємо всі анімації та переходи для людей, які вважають за краще їх не використовувати */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+.option {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.option .option-box {
+  display: flex;
+  background-color: purple;
+  border-radius: 15px;
+  width: 150px;
+  height: 150px;
+  align-items: center;
+}
+.option .option-box .option-img {
+  margin: 0 auto;
+  border-radius: 15px;
+  width: 140px;
+  height: 140px;
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 10px;
+}
+.section .section-box {
+  display: flex;
+  border: 4px purple solid;
+  border-radius: 15px;
+  width: 160px;
+  height: 160px;
+  align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.section .section-box .section-img {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  margin: 0 auto;
+  border-radius: 15px;
+  width: 150px;
+  height: 150px;
+}
+
+.header {
+  display: flex;
+  padding: 3px 0 10px 0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+.header .win {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(204, 107, 176);
+  background: linear-gradient(90deg, rgb(204, 107, 176) 0%, rgb(244, 159, 222) 35%, rgb(194, 121, 183) 100%);
+  width: 353px;
+  height: 40px;
+  border: 1px solid #fc99c9;
+  border-radius: 20px;
+}
+
+@media (width < 500px) {
+  .option {
+    gap: 5px;
+  }
+  .option .option-box {
+    width: 110px;
+    height: 110px;
+  }
+  .option .option-box .option-img {
+    width: 100px;
+    height: 100px;
+  }
+  .section {
+    gap: 5px;
+    padding-bottom: 10px;
+  }
+  .section .section-box {
+    width: 120px;
+    height: 120px;
+  }
+  .section .section-box .section-img {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    margin: 0 auto;
+    width: 110px;
+    height: 110px;
+  }
+  .header .win {
+    width: 330px;
+  }
+}
+.start {
+  padding: 3px 2px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  text-align: center;
+}
+.start .start-txt {
+  padding: 3px 2px;
+  font-size: 18px;
+}
+.start .start-btn {
+  display: flex;
+  background-color: purple;
+  margin: 0 auto;
+  width: 70px;
+  height: 30px;
+  color: rgb(224, 214, 214);
+  border: none;
+  text-align: center;
+  align-items: center;
+}
+
+.end {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+}
+.end .end-txt {
+  display: flex;
+  margin: 0 auto;
+  font-size: 20px;
+}
+
+body {
+  background: rgb(204, 107, 176);
+  background: linear-gradient(180deg, rgb(204, 107, 176) 0%, rgb(244, 159, 222) 35%, rgb(194, 121, 183) 100%);
+  padding: 0 10px 0 10px;
+}
+
+.cur-part {
+  display: none !important;
+}/*# sourceMappingURL=App.css.map */
